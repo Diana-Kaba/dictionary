@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Словарь</title>
+  </head>
+  <body>
+    <script>
+      let words = {
+        apple: "яблоко",
+        house: "дом",
+        mouse: "мышь",
+      };
+      let ruEn = confirm('Перевод с русского на английский?');
+      let enRu = confirm('Перевод с английского на русский?');
+      let amount = prompt("Введите количество перебора слов:");
+      let ball = 0;
+      let errors = 0;
+      let translate;
+      if (ruEn) {
+      for (let i = 0; i < amount; i++) {
+        for (let word in words) {
+          alert("Слово: " + words[word]);
+          translate = prompt("Введите перевод:");
+          if (translate == word) {
+            alert("Правильно!");
+            ball++;
+          } else {
+            alert("Неправильно!");
+            errors++;
+          }
+        }
+      }}
+      if (!ruEn) {
+        for (let i = 0; i < amount; i++) {
+        for (let word in words) {
+          alert("Слово: " + word);
+          translate = prompt("Введите перевод:");
+      if (translate == words[word]) {
+            alert("Правильно!");
+            ball++;
+          } else {
+            alert("Неправильно!");
+            errors++;
+          }
+        }
+      }}
+      alert("Правильно: " + ball + ", неправильно: " + errors);
+      for (word in words) {
+        document.write(word + ": " + words[word] + "<br>");
+      }
+    </script>
+  </body>
+</html>
